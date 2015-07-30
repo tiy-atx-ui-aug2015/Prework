@@ -10,29 +10,27 @@
 </head>
 <body>
 <div class="site-wrapper">
-	<div id="left">
-		<div class="nav-wrapper">
-			<div class="logo-wrapper">
-				<img src="/images/logo.png" id="logo">
-				<h4>UI Design</h4>
-				<h5>August 2015</h5>
-			</div>
-			<nav class="nav-collapse">
-			  <ul>
-			    <li><a href="/index.html#welcome">Home</a></li>
-			    <li><a href="/index.html#prework">Prework</a></li>
-			    <li><a href="/index.html#objectives">Objectives</a></li>
-			    <li><a href="/index.html#mindset">Mindset and Learning</a></li>
-			    <li><a href="/index.html#setup">Computer Setup</a></li>
-			    <li><a href="/index.html#adobe">Adobe Suite</a></li>
-			    <li><a href="/index.html#design">Basic Design Principles</a></li>
-			    <li><a href="/index.html#coding">HTML and CSS Basics</a></li>
-			    <li><a href="/index.html#markdown">Markdown</a></li>
-			    <li><a href="#/index.htmltyping">Typing</a></li>
-			    <li><a href="/index.html#bonus">Bonus</a></li>
-			  </ul>
-			</nav>
-		</div>
+	<div class="nav-wrapper beFixed">
+	<div class="logo-wrapper">
+		<img src="/images/logo.png" id="logo">
+		<h4>UI Design</h4>
+		<h5>August 2015</h5>
+	</div>
+		<nav class="nav-collapse">
+		  <ul>
+		    <li><a href="/index.html#welcome">Home</a></li>
+		    <li><a href="/index.html#prework">Prework</a></li>
+		    <li><a href="/index.html#objectives">Objectives</a></li>
+		    <li><a href="/index.html#mindset">Mindset and Learning</a></li>
+		    <li><a href="/index.html#setup">Computer Setup</a></li>
+		    <li><a href="/index.html#adobe">Adobe Suite</a></li>
+		    <li><a href="/index.html#design">Basic Design Principles</a></li>
+		    <li><a href="/index.html#coding">HTML and CSS Basics</a></li>
+		    <li><a href="/index.html#markdown">Markdown</a></li>
+		    <li><a href="#/index.htmltyping">Typing</a></li>
+		    <li><a href="/index.html#bonus">Bonus</a></li>
+		  </ul>
+		</nav>
 	</div>
 	<div class="content-wrapper">
 	<p><strong>Read the document below and complete the exercises at the bottom.  Send your answers to abby@theironyard.com by <em>5:00pm (CST) on August 20th</em>.  Please submit answers for this exercise as a word document.</strong></p>
@@ -105,46 +103,27 @@
 			<small><div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div></small>
 		</div>
 		</div>
-		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="//use.typekit.net/pzj6ksy.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script>
-	  	var nav = responsiveNav(".nav-collapse");
-		  $(document).ready(function () {
-
-	    	var length = $('#left').height() - $('.nav-wrapper').height() + $('#left').offset().top;
-
-		    $(window).scroll(function () {
-
-		        var scroll = $(this).scrollTop();
-		        var height = $('.nav-wrapper').height() + 'px';
-
-		        if (scroll < $('#left').offset().top) {
-
-		            $('.nav-wrapper').css({
-		                'position': 'absolute',
-		                'top': '0'
-		            });
-
-		        } else if (scroll > length) {
-
-		            $('.nav-wrapper').css({
-		                'position': 'absolute',
-		                'bottom': '0',
-		                'top': 'auto'
-		            });
-
-		        } else {
-
-		            $('.nav-wrapper').css({
-		                'position': 'fixed',
-		                'top': '0',
-		                'height': height
-		            });
-		        }
-		    });
-		});
+		  var nav = responsiveNav(".nav-collapse");
+		  $(document).ready(function() {
+		  	if ( $(window).height() < 600) {
+			    $('.nav-wrapper').addClass('beAbsolute').removeClass('beFixed');
+			  } else {
+			    $('.nav-wrapper').addClass('beFixed').removeClass('beAbsolute');
+			  }
+			});
+		  $(window).resize(function() {
+			  if ( $(window).height() < 600) {
+			    $('.nav-wrapper').addClass('beAbsolute').removeClass('beFixed');
+			  } else {
+			    $('.nav-wrapper').addClass('beFixed').removeClass('beAbsolute');
+			  }
+			});
 		</script>
+
 </div>
 </body>
 </html>

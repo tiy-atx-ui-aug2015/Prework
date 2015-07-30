@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="site-wrapper">
-	<div class="nav-wrapper">
+	<div class="nav-wrapper beFixed">
 	<div class="logo-wrapper">
 		<img src="/images/logo.png" id="logo">
 		<h4>UI Design</h4>
@@ -40,7 +40,7 @@
 		<p>
 			The purpose of this course is to get you thinking and learning like a UI Designer. UI design, encompasses so much more than just creating a product that is visually appealing. UI designers have to design complicated interactions with the user in mind, while still maintaining a beautiful interface. Designing effective interfaces involves researching, experimenting, designing, coding, and testing. 
 			<p>The purpose of this prework is to give you a basis of knowledge before you start the class so we can dig right into the more complicated concepts starting on day one.</p>
-			<p>Responses for the <a href="#mindset">Mindset and Learning questions</a> and the <a href="#coding">Tree Exercises</a> should be submitted to abby@theironyard.com by <strong>5:00pm CST on August 20th</strong>. The remaining prework does not require submission, but I <em>highly</em> recommend completing this work before the first day of class on August 24th. 
+			<p>Responses for the <a href="#mindset">Mindset and Learning questions</a> and the <a href="#coding">Tree Exercises</a> should be submitted to abby@theironyard.com by <strong>5:00pm CST on August 20th</strong>. The remaining prework does not require submission, but I <em>highly</em> recommend completing this work before the first day of class on August 24th. If you have any questions, shoot me an email (abby@theironyard.com)
 		</p>
 		<h1 id="objectives">Objectives</h1>
 		<ul>
@@ -143,9 +143,24 @@
 			</ul>
 		<script src="//use.typekit.net/pzj6ksy.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
-	<script>
-	  var nav = responsiveNav(".nav-collapse");
-	</script>
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script>
+		  var nav = responsiveNav(".nav-collapse");
+		  $(document).ready(function() {
+		  	if ( $(window).height() < 600) {
+			    $('.nav-wrapper').addClass('beAbsolute').removeClass('beFixed');
+			  } else {
+			    $('.nav-wrapper').addClass('beFixed').removeClass('beAbsolute');
+			  }
+			});
+		  $(window).resize(function() {
+			  if ( $(window).height() < 600) {
+			    $('.nav-wrapper').addClass('beAbsolute').removeClass('beFixed');
+			  } else {
+			    $('.nav-wrapper').addClass('beFixed').removeClass('beAbsolute');
+			  }
+			});
+		</script>
 </div>
 </body>
 </html>

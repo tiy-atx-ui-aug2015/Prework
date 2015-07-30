@@ -105,7 +105,6 @@ ol {
 
 .site-wrapper {
 	max-width: 1000px;
-	positon: relative;
 }
 
 .logo-wrapper {
@@ -169,33 +168,30 @@ nav {
 	margin: 40px 0 0 20px;
 }
 
-#left {
-	height: 100%;
-}
-
 @media screen and (min-width: 640px){
 	.content-wrapper {
 		max-width: 650px;
-		float: right;
-		margin-left: 250px;
-		position: relative;
-	}
-
-	#left {
-		position: absolute;
-		width: 250px;
-		height: 100%;
+		float: left;
+		margin-left: 250px
 	}
 
 	.nav-wrapper {
 		left: 0;
 		top: 0;
+		width: 250px;
+	}
+
+	.beFixed {
+		position: fixed;
+	}
+	.beAbsolute {
+		position: absolute;
 	}
 
 	#logo {
 		width: 120px;
 		margin-left: 60px;
-		}
+	}
 
 	.nav-toggle {
 		display: none;
